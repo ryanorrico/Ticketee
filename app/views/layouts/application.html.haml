@@ -1,0 +1,22 @@
+!!! 5
+!!!
+%html
+	:plain
+		<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+		<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+		<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+		<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	%head
+		%title Ticketee
+		= stylesheet_link_tag    "application", :media => "all"
+		= javascript_include_tag "application"
+		= csrf_meta_tags
+	
+	%body
+	
+		-flash.each do |key,value|
+			.flash{:id => key}
+				= value
+			
+		= yield		
+		
